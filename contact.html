@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tipsy Tech Solutions — Websites That Build Your Business</title>
+<title>Contact — Tipsy Tech Solutions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -255,104 +255,6 @@
   .feature-item h3{font-family:var(--display);font-size:1rem;font-weight:600;}
   .feature-item p{font-size:0.85rem;color:var(--text-muted);}
 
-  /* ---------- pricing ---------- */
-  .pricing-grid{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch;
-  }
-  .price-card{
-    border:1px solid var(--line);border-radius:var(--radius);
-    background:var(--surface);overflow:hidden;
-    display:flex;flex-direction:column;
-    transition:transform 0.25s, border-color 0.25s;
-  }
-  .price-card:hover{transform:translateY(-4px);}
-  .price-card.featured{
-    border-color:var(--green);
-    box-shadow:0 20px 50px rgba(140,255,78,0.1);
-  }
-  .price-card .term-bar{
-    display:flex;align-items:center;gap:6px;
-    padding:11px 14px;background:var(--surface-2);border-bottom:1px solid var(--line);
-  }
-  .price-card .term-bar .browser-dot{width:8px;height:8px;}
-  .term-file{
-    margin-left:auto;font-family:var(--mono);font-size:0.7rem;color:var(--text-faint);
-  }
-  .price-card .badge{
-    font-family:var(--mono);font-size:0.68rem;color:#0A100C;background:var(--green);
-    padding:3px 9px;border-radius:5px;font-weight:700;letter-spacing:0.03em;
-    position:absolute;top:-11px;left:50%;transform:translateX(-50%);
-  }
-  .price-card-inner{padding:30px 26px 26px;flex:1;display:flex;flex-direction:column;position:relative;}
-  .price-card h3{font-family:var(--display);font-size:1.3rem;font-weight:700;margin-bottom:6px;}
-  .price-card .tagline{font-size:0.86rem;color:var(--text-muted);margin-bottom:22px;}
-  .price-value{font-family:var(--mono);font-size:1.65rem;font-weight:700;color:var(--green);line-height:1.2;}
-  .price-value .from{font-size:0.85rem;color:var(--text-faint);font-weight:500;}
-  .price-note{font-family:var(--mono);font-size:0.7rem;color:var(--text-faint);margin-bottom:22px;text-transform:uppercase;letter-spacing:0.05em;}
-  .feature-list{list-style:none;margin-bottom:26px;flex:1;}
-  .feature-list li{
-    display:flex;gap:9px;align-items:flex-start;
-    font-size:0.87rem;color:var(--text);padding:7px 0;
-    border-bottom:1px solid rgba(35,48,38,0.6);
-  }
-  .feature-list li:last-child{border-bottom:none;}
-  .feature-list li .tick{
-    font-family:var(--mono);color:var(--green);font-size:0.8rem;margin-top:1px;flex-shrink:0;
-  }
-  .price-cta{
-    text-align:center;font-family:var(--mono);font-weight:600;font-size:0.85rem;
-    padding:13px;border-radius:8px;border:1px solid var(--line-bright);
-    transition:all 0.2s;
-  }
-  .price-card.featured .price-cta{background:var(--green);color:#0A100C;border-color:var(--green);}
-  .price-card:not(.featured) .price-cta:hover{border-color:var(--green);color:var(--green);}
-  .price-card.featured .price-cta:hover{transform:translateY(-2px);}
-
-  .bonus-strip{
-    margin-top:26px;
-    border:1px dashed var(--line-bright);border-radius:var(--radius);
-    padding:22px 28px;display:flex;align-items:center;gap:18px;
-    background:rgba(140,255,78,0.03);
-  }
-  .bonus-icon{font-family:var(--mono);font-size:1.4rem;color:var(--green);}
-  .bonus-strip h4{font-family:var(--display);font-size:1rem;margin-bottom:3px;}
-  .bonus-strip p{font-size:0.86rem;color:var(--text-muted);}
-
-  /* ---------- included ---------- */
-  .included-grid{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
-  }
-  .included-item{
-    border:1px solid var(--line);border-radius:10px;padding:20px;
-    text-align:center;background:var(--surface);
-  }
-  .included-item .glyph{
-    font-family:var(--mono);color:var(--green);font-size:1rem;margin-bottom:10px;
-  }
-  .included-item p{font-size:0.85rem;color:var(--text-muted);}
-
-  /* ---------- why us ---------- */
-  .why-grid{
-    display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
-  }
-  .why-list{list-style:none;}
-  .why-list li{
-    display:flex;gap:14px;align-items:flex-start;
-    padding:16px 0;border-bottom:1px solid var(--line);
-  }
-  .why-list li:first-child{padding-top:0;}
-  .why-list .num{font-family:var(--mono);color:var(--green-dim);font-size:0.8rem;padding-top:2px;}
-  .why-list h4{font-family:var(--display);font-size:1rem;font-weight:600;margin-bottom:4px;}
-  .why-list p{font-size:0.85rem;color:var(--text-muted);}
-  .why-panel{
-    border:1px solid var(--line);border-radius:var(--radius);
-    background:var(--surface);padding:30px;
-    font-family:var(--mono);font-size:0.84rem;color:var(--text-muted);
-  }
-  .why-panel .line{padding:6px 0;display:flex;gap:10px;}
-  .why-panel .line .sym{color:var(--green);}
-  .why-panel .out{color:var(--text);}
-
   /* ---------- CTA ---------- */
   .cta-band{
     border:1px solid var(--line-bright);border-radius:20px;
@@ -382,9 +284,6 @@
     .feature-strip{grid-template-columns:repeat(2,1fr);}
     .feature-item:nth-child(2){border-right:none;}
     .feature-item{border-bottom:1px solid var(--line);}
-    .pricing-grid{grid-template-columns:1fr;}
-    .included-grid{grid-template-columns:repeat(2,1fr);}
-    .why-grid{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr;gap:32px;}
     .nav-links{display:none;}
   }
@@ -392,90 +291,69 @@
     .wrap{padding:0 20px;}
     .feature-strip{grid-template-columns:1fr;}
     .feature-item{border-right:none;}
-    .included-grid{grid-template-columns:1fr;}
     .cta-band{padding:40px 24px;}
   }
-/* Hero overlay */
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle at 30% 30%, rgba(0,0,0,0.25), transparent 70%);
-  pointer-events:none;
-  z-index:0;
-}
-.hero > .wrap{position:relative;z-index:1;}
-/* Body tweaks */
-.wrap{max-width:1100px;}
-@media (min-width:960px){
-  body{line-height:1.6;}
-}
-/* Feature icons */
-.feature-icon{
-  font-size:1.4rem;
-  width:2.4rem;height:2.4rem;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  background:rgba(140,255,78,0.1);
-}
-/* btn-ghost hover glow */
-.btn-ghost:hover{
-  border-color:var(--green);
-  color:var(--green);
-  box-shadow:inset 0 0 0 2px var(--green);
-}
-/* button active scale */
-.btn-primary:active,
-.btn-ghost:active{
-  transform:scale(0.97);
-}
-/* link underline animation */
-.nav-links a,
-.footer-col a{
-  position:relative;
-}
-.nav-links a::after,
-.footer-col a::after{
-  content:"";
-  position:absolute;
-  left:0;bottom:-2px;
-  height:2px;width:0;
-  background:var(--green);
-  transition:width .25s ease;
-}
-.nav-links a:hover::after,
-.footer-col a:hover::after{width:100%;}
-/* feature-item hover lift */
-.feature-item:hover{
-  background:var(--surface-2);
-  transform:translateY(-4px);
-}
-/* price-card featured rotation */
-.price-card.featured{
-  transform:rotate(-2deg);
-}
-.price-card.featured:hover{
-  transform:rotate(-2deg) translateY(-4px);
-}
-/* badge tweak */
-.price-card .badge{
-  background:var(--green);
-  color:#0A100C;
-  padding:2px 8px;
-  border-radius:3px;
-  font-size:0.65rem;
-  top:-8px;
-}
-/* price-value spacing */
-.price-value .from{
-  letter-spacing:0.02em;
-}
-/* text-muted lighten */
-:root{
-  --text-muted:#9FB8A5;
-}
+  /* Hero overlay */
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at 30% 30%, rgba(0,0,0,0.25), transparent 70%);
+    pointer-events:none;
+    z-index:0;
+  }
+  .hero > .wrap{position:relative;z-index:1;}
+  /* Body tweaks */
+  .wrap{max-width:1100px;}
+  @media (min-width:960px){
+    body{line-height:1.6;}
+  }
+  /* Feature icons */
+  .feature-icon{
+    font-size:1.4rem;
+    width:2.4rem;height:2.4rem;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:rgba(140,255,78,0.1);
+  }
+  /* btn-ghost hover glow */
+  .btn-ghost:hover{
+    border-color:var(--green);
+    color:var(--green);
+    box-shadow:inset 0 0 0 2px var(--green);
+  }
+  /* button active scale */
+  .btn-primary:active,
+  .btn-ghost:active{
+    transform:scale(0.97);
+  }
+  /* link underline animation */
+  .nav-links a,
+  .footer-col a{
+    position:relative;
+  }
+  .nav-links a::after,
+  .footer-col a::after{
+    content:"";
+    position:absolute;
+    left:0;bottom:-2px;
+    height:2px;width:0;
+    background:var(--green);
+    transition:width .25s ease;
+  }
+  .nav-links a:hover::after,
+  .footer-col a:hover::after{width:100%;}
+  /* feature-item hover lift */
+  .feature-item:hover{
+    background:var(--surface-2);
+    transform:translateY(-4px);
+  }
+  /* text-muted lighten */
+  :root{
+    --text-muted:#9FB8A5;
+  }
 </style>
 </head>
 <body>
@@ -500,10 +378,10 @@
       Tipsy<span class="dim">Tech</span>
     </div>
     <div class="nav-links">
+      <a href="index.html">Home</a>
       <a href="packages.html">Packages</a>
       <a href="included.html">What's Included</a>
       <a href="whyus.html">Why Us</a>
-      <a href="contact.html">Contact</a>
     </div>
     <a href="contact.html" class="nav-cta">$ get_quote</a>
   </nav>
@@ -519,7 +397,7 @@
         <p class="lede">Tipsy Tech Solutions designs fast, mobile-first business websites — from a five-page starter site to a full booking-and-payments platform. You focus on customers, we handle the code.</p>
         <div class="hero-actions">
           <a href="packages.html" class="btn-primary">View packages →</a>
-          <a href="contact.html" class="btn-ghost">Talk to us on WhatsApp</a>
+          <a href="https://wa.me/917030955722" class="btn-ghost">Talk to us on WhatsApp</a>
         </div>
         <div class="trust-row">
           <span><strong>3</strong> package tiers</span>
@@ -539,7 +417,7 @@
           <div class="mock-nav">
             <div class="mock-logo"></div>
             <div class="mock-links"><span></span><span></span><span></span></div>
-          </div>
+          </div
           <div class="mock-hero">
             <div class="mock-lines">
               <span></span>
@@ -556,7 +434,7 @@
         </div>
         <div class="status-line">
           <span>build: passing</span>
-          <span>deployed in &lt; 3 weeks</span>
+          <span>deployed in < 3 weeks</span>
         </div>
       </div>
     </div>
@@ -583,169 +461,9 @@
         </div>
         <div class="feature-item">
           <div class="feature-icon">◎</div>
-          <h3>Support &amp; Maintenance</h3>
+          <h3>Support & Maintenance</h3>
           <p>We stay reachable after launch, not just during handoff.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section class="section-pad" id="packages">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow" style="justify-content:center;display:inline-flex;">PACKAGES</div>
-        <h2>Choose the perfect package for your business</h2>
-        <p>Every plan ships with SSL, hosting assistance, and real support — pick the tier that matches how far along your business is.</p>
-      </div>
-
-      <div class="pricing-grid">
-        <!-- Starter -->
-        <div class="price-card">
-          <div class="term-bar">
-            <span class="browser-dot r"></span><span class="browser-dot y"></span><span class="browser-dot g"></span>
-            <span class="term-file">starter.sh</span>
-          </div>
-          <div class="price-card-inner">
-            <h3>Starter</h3>
-            <p class="tagline">Perfect for small businesses</p>
-            <div class="price-value">₹10,000 <span class="from">– ₹15,000</span></div>
-            <div class="price-note">One-time</div>
-            <ul class="feature-list">
-              <li><span class="tick">✔</span> Professional website design</li>
-              <li><span class="tick">✔</span> Mobile responsive</li>
-              <li><span class="tick">✔</span> WhatsApp button</li>
-              <li><span class="tick">✔</span> Google Maps integration</li>
-              <li><span class="tick">✔</span> Contact / enquiry form</li>
-              <li><span class="tick">✔</span> Basic SEO setup</li>
-              <li><span class="tick">✔</span> 5 pages included*</li>
-            </ul>
-            <a href="contact.html" class="price-cta">Get started</a>
-          </div>
-        </div>
-
-        <!-- Business -->
-        <div class="price-card featured">
-          <div class="term-bar">
-            <span class="browser-dot r"></span><span class="browser-dot y"></span><span class="browser-dot g"></span>
-            <span class="term-file">business.sh</span>
-          </div>
-          <div class="price-card-inner">
-            <span class="badge">MOST POPULAR</span>
-            <h3>Business</h3>
-            <p class="tagline">Advanced features for growing businesses</p>
-            <div class="price-value">₹20,000 <span class="from">– ₹35,000</span></div>
-            <div class="price-note">One-time</div>
-            <ul class="feature-list">
-              <li><span class="tick">✔</span> Everything in Starter</li>
-              <li><span class="tick">✔</span> Online booking / enquiry system</li>
-              <li><span class="tick">✔</span> Photo gallery</li>
-              <li><span class="tick">✔</span> Google Reviews integration</li>
-              <li><span class="tick">✔</span> Advanced SEO + analytics</li>
-              <li><span class="tick">✔</span> Custom design, up to 10 pages*</li>
-              <li><span class="tick">✔</span> Free 1 month support</li>
-            </ul>
-            <a href="contact.html" class="price-cta">Get started</a>
-          </div>
-        </div>
-
-        <!-- Premium -->
-        <div class="price-card">
-          <div class="term-bar">
-            <span class="browser-dot r"></span><span class="browser-dot y"></span><span class="browser-dot g"></span>
-            <span class="term-file">premium.sh</span>
-          </div>
-          <div class="price-card-inner">
-            <h3>Premium</h3>
-            <p class="tagline">Complete solution for serious businesses</p>
-            <div class="price-value">₹40,000<span class="from">+</span></div>
-            <div class="price-note">One-time</div>
-            <ul class="feature-list">
-              <li><span class="tick">✔</span> Everything in Business</li>
-              <li><span class="tick">✔</span> AI chatbot &amp; lead automation</li>
-              <li><span class="tick">✔</span> Payment gateway integration</li>
-              <li><span class="tick">✔</span> Advanced SEO + local SEO</li>
-              <li><span class="tick">✔</span> Priority support</li>
-              <li><span class="tick">✔</span> 3 months maintenance</li>
-              <li><span class="tick">✔</span> Unlimited pages*</li>
-            </ul>
-            <a href="contact.html" class="price-cta">Get started</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="bonus-strip">
-        <div class="bonus-icon">◈</div>
-        <div>
-          <h4>Bonus on every package</h4>
-          <p>Free domain setup assistance, no matter which tier you choose.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- INCLUDED -->
-  <section class="section-pad" id="included">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Included in every package</h2>
-        <p>The essentials come standard — you never pay extra to get your site actually working.</p>
-      </div>
-      <div class="included-grid">
-        <div class="included-item">
-          <div class="glyph">◆</div>
-          <p>SSL certificate (security)</p>
-        </div>
-        <div class="included-item">
-          <div class="glyph">☁</div>
-          <p>Web hosting assistance</p>
-        </div>
-        <div class="included-item">
-          <div class="glyph">▤</div>
-          <p>Basic training (how to use it)</p>
-        </div>
-        <div class="included-item">
-          <div class="glyph">◎</div>
-          <p>Ongoing support &amp; guidance</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY US -->
-  <section class="section-pad" id="why">
-    <div class="wrap why-grid">
-      <div>
-        <div class="eyebrow">WHY CHOOSE US</div>
-        <h2 style="font-family:var(--display);font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:18px;">A studio that ships and sticks around</h2>
-        <ul class="why-list">
-          <li>
-            <span class="num">01</span>
-            <div><h4>Modern &amp; unique designs</h4><p>No two client sites look the same — built around your business, not a theme store.</p></div>
-          </li>
-          <li>
-            <span class="num">02</span>
-            <div><h4>Fast, secure, and reliable</h4><p>Optimized loading speed on hosting we trust, with SSL on every plan.</p></div>
-          </li>
-          <li>
-            <span class="num">03</span>
-            <div><h4>100% responsive, SEO-friendly structure</h4><p>Built to work on any screen and to be found on Google from day one.</p></div>
-          </li>
-          <li>
-            <span class="num">04</span>
-            <div><h4>Dedicated support after launch</h4><p>We don't disappear after the invoice — ongoing guidance is part of the deal.</p></div>
-          </li>
-        </ul>
-      </div>
-      <div class="why-panel">
-        <div class="line"><span class="sym">$</span> whoami</div>
-        <div class="line out">tipsy_tech_solutions — Goa, India</div>
-        <div class="line"><span class="sym">$</span> cat mission.txt</div>
-        <div class="line out">"We build websites that build your business."</div>
-        <div class="line"><span class="sym">$</span> ls services/</div>
-        <div class="line out">starter/  business/  premium/  support/</div>
-        <div class="line"><span class="sym">$</span> ./deploy --client=you</div>
-        <div class="line out">→ site live in under 3 weeks</div>
       </div>
     </div>
   </section>
@@ -757,7 +475,7 @@
         <h2>Your business deserves a website that works as hard as you do.</h2>
         <p>Tell us about your business and we'll recommend the right package — no pressure, just a plan.</p>
         <div class="hero-actions">
-          <a href="contact.html" class="btn-primary">Start your project →</a>
+          <a href="packages.html" class="btn-primary">Start your project →</a>
           <a href="tel:+917030955722" class="btn-ghost">Call +91 70309 55722</a>
         </div>
       </div>
@@ -784,7 +502,9 @@
       <div class="footer-col">
         <h5>Studio</h5>
         <p>Goa, India</p>
+        <a href="index.html">Home</a>
         <a href="packages.html">Packages</a>
+        <a href="included.html">What's Included</a>
         <a href="whyus.html">Why Us</a>
       </div>
     </div>

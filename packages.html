@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tipsy Tech Solutions — Websites That Build Your Business</title>
+<title>Packages — Tipsy Tech Solutions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -318,64 +318,6 @@
   .bonus-strip h4{font-family:var(--display);font-size:1rem;margin-bottom:3px;}
   .bonus-strip p{font-size:0.86rem;color:var(--text-muted);}
 
-  /* ---------- included ---------- */
-  .included-grid{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
-  }
-  .included-item{
-    border:1px solid var(--line);border-radius:10px;padding:20px;
-    text-align:center;background:var(--surface);
-  }
-  .included-item .glyph{
-    font-family:var(--mono);color:var(--green);font-size:1rem;margin-bottom:10px;
-  }
-  .included-item p{font-size:0.85rem;color:var(--text-muted);}
-
-  /* ---------- why us ---------- */
-  .why-grid{
-    display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
-  }
-  .why-list{list-style:none;}
-  .why-list li{
-    display:flex;gap:14px;align-items:flex-start;
-    padding:16px 0;border-bottom:1px solid var(--line);
-  }
-  .why-list li:first-child{padding-top:0;}
-  .why-list .num{font-family:var(--mono);color:var(--green-dim);font-size:0.8rem;padding-top:2px;}
-  .why-list h4{font-family:var(--display);font-size:1rem;font-weight:600;margin-bottom:4px;}
-  .why-list p{font-size:0.85rem;color:var(--text-muted);}
-  .why-panel{
-    border:1px solid var(--line);border-radius:var(--radius);
-    background:var(--surface);padding:30px;
-    font-family:var(--mono);font-size:0.84rem;color:var(--text-muted);
-  }
-  .why-panel .line{padding:6px 0;display:flex;gap:10px;}
-  .why-panel .line .sym{color:var(--green);}
-  .why-panel .out{color:var(--text);}
-
-  /* ---------- CTA ---------- */
-  .cta-band{
-    border:1px solid var(--line-bright);border-radius:20px;
-    padding:56px 48px;text-align:center;
-    background:radial-gradient(circle at 50% 0%, rgba(140,255,78,0.08), transparent 60%), var(--surface);
-  }
-  .cta-band h2{font-family:var(--display);font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:14px;}
-  .cta-band p{color:var(--text-muted);margin-bottom:30px;max-width:480px;margin-left:auto;margin-right:auto;}
-  .cta-band .hero-actions{justify-content:center;margin-bottom:0;}
-
-  /* ---------- footer ---------- */
-  footer{border-top:1px solid var(--line);padding:56px 0 28px;}
-  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;margin-bottom:44px;}
-  .footer-brand p{color:var(--text-muted);font-size:0.88rem;margin-top:14px;max-width:280px;}
-  .footer-col h5{font-family:var(--mono);font-size:0.76rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-faint);margin-bottom:16px;}
-  .footer-col a, .footer-col p{display:block;font-size:0.9rem;color:var(--text-muted);padding:6px 0;transition:color 0.2s;}
-  .footer-col a:hover{color:var(--green);}
-  .footer-bottom{
-    display:flex;justify-content:space-between;align-items:center;
-    padding-top:24px;border-top:1px solid var(--line);
-    font-family:var(--mono);font-size:0.76rem;color:var(--text-faint);flex-wrap:wrap;gap:12px;
-  }
-
   /* ---------- responsive ---------- */
   @media (max-width:960px){
     .hero-grid{grid-template-columns:1fr;}
@@ -395,87 +337,87 @@
     .included-grid{grid-template-columns:1fr;}
     .cta-band{padding:40px 24px;}
   }
-/* Hero overlay */
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle at 30% 30%, rgba(0,0,0,0.25), transparent 70%);
-  pointer-events:none;
-  z-index:0;
-}
-.hero > .wrap{position:relative;z-index:1;}
-/* Body tweaks */
-.wrap{max-width:1100px;}
-@media (min-width:960px){
-  body{line-height:1.6;}
-}
-/* Feature icons */
-.feature-icon{
-  font-size:1.4rem;
-  width:2.4rem;height:2.4rem;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  background:rgba(140,255,78,0.1);
-}
-/* btn-ghost hover glow */
-.btn-ghost:hover{
-  border-color:var(--green);
-  color:var(--green);
-  box-shadow:inset 0 0 0 2px var(--green);
-}
-/* button active scale */
-.btn-primary:active,
-.btn-ghost:active{
-  transform:scale(0.97);
-}
-/* link underline animation */
-.nav-links a,
-.footer-col a{
-  position:relative;
-}
-.nav-links a::after,
-.footer-col a::after{
-  content:"";
-  position:absolute;
-  left:0;bottom:-2px;
-  height:2px;width:0;
-  background:var(--green);
-  transition:width .25s ease;
-}
-.nav-links a:hover::after,
-.footer-col a:hover::after{width:100%;}
-/* feature-item hover lift */
-.feature-item:hover{
-  background:var(--surface-2);
-  transform:translateY(-4px);
-}
-/* price-card featured rotation */
-.price-card.featured{
-  transform:rotate(-2deg);
-}
-.price-card.featured:hover{
-  transform:rotate(-2deg) translateY(-4px);
-}
-/* badge tweak */
-.price-card .badge{
-  background:var(--green);
-  color:#0A100C;
-  padding:2px 8px;
-  border-radius:3px;
-  font-size:0.65rem;
-  top:-8px;
-}
-/* price-value spacing */
-.price-value .from{
-  letter-spacing:0.02em;
-}
-/* text-muted lighten */
-:root{
-  --text-muted:#9FB8A5;
-}
+  /* Hero overlay */
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at 30% 30%, rgba(0,0,0,0.25), transparent 70%);
+    pointer-events:none;
+    z-index:0;
+  }
+  .hero > .wrap{position:relative;z-index:1;}
+  /* Body tweaks */
+  .wrap{max-width:1100px;}
+  @media (min-width:960px){
+    body{line-height:1.6;}
+  }
+  /* Feature icons */
+  .feature-icon{
+    font-size:1.4rem;
+    width:2.4rem;height:2.4rem;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:rgba(140,255,78,0.1);
+  }
+  /* btn-ghost hover glow */
+  .btn-ghost:hover{
+    border-color:var(--green);
+    color:var(--green);
+    box-shadow:inset 0 0 0 2px var(--green);
+  }
+  /* button active scale */
+  .btn-primary:active,
+  .btn-ghost:active{
+    transform:scale(0.97);
+  }
+  /* link underline animation */
+  .nav-links a,
+  .footer-col a{
+    position:relative;
+  }
+  .nav-links a::after,
+  .footer-col a::after{
+    content:"";
+    position:absolute;
+    left:0;bottom:-2px;
+    height:2px;width:0;
+    background:var(--green);
+    transition:width .25s ease;
+  }
+  .nav-links a:hover::after,
+  .footer-col a:hover::after{width:100%;}
+  /* feature-item hover lift */
+  .feature-item:hover{
+    background:var(--surface-2);
+    transform:translateY(-4px);
+  }
+  /* price-card featured rotation */
+  .price-card.featured{
+    transform:rotate(-2deg);
+  }
+  .price-card.featured:hover{
+    transform:rotate(-2deg) translateY(-4px);
+  }
+  /* badge tweak */
+  .price-card .badge{
+    background:var(--green);
+    color:#0A100C;
+    padding:2px 8px;
+    border-radius:3px;
+    font-size:0.65rem;
+    top:-8px;
+  }
+  /* price-value spacing */
+  .price-value .from{
+    letter-spacing:0.02em;
+  }
+  /* text-muted lighten */
+  :root{
+    --text-muted:#9FB8A5;
+  }
 </style>
 </head>
 <body>
@@ -500,7 +442,7 @@
       Tipsy<span class="dim">Tech</span>
     </div>
     <div class="nav-links">
-      <a href="packages.html">Packages</a>
+      <a href="index.html">Home</a>
       <a href="included.html">What's Included</a>
       <a href="whyus.html">Why Us</a>
       <a href="contact.html">Contact</a>
@@ -556,7 +498,7 @@
         </div>
         <div class="status-line">
           <span>build: passing</span>
-          <span>deployed in &lt; 3 weeks</span>
+          <span>deployed in < 3 weeks</span>
         </div>
       </div>
     </div>
@@ -583,7 +525,7 @@
         </div>
         <div class="feature-item">
           <div class="feature-icon">◎</div>
-          <h3>Support &amp; Maintenance</h3>
+          <h3>Support & Maintenance</h3>
           <p>We stay reachable after launch, not just during handoff.</p>
         </div>
       </div>
@@ -662,7 +604,7 @@
             <div class="price-note">One-time</div>
             <ul class="feature-list">
               <li><span class="tick">✔</span> Everything in Business</li>
-              <li><span class="tick">✔</span> AI chatbot &amp; lead automation</li>
+              <li><span class="tick">✔</span> AI chatbot & lead automation</li>
               <li><span class="tick">✔</span> Payment gateway integration</li>
               <li><span class="tick">✔</span> Advanced SEO + local SEO</li>
               <li><span class="tick">✔</span> Priority support</li>
@@ -679,86 +621,6 @@
         <div>
           <h4>Bonus on every package</h4>
           <p>Free domain setup assistance, no matter which tier you choose.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- INCLUDED -->
-  <section class="section-pad" id="included">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Included in every package</h2>
-        <p>The essentials come standard — you never pay extra to get your site actually working.</p>
-      </div>
-      <div class="included-grid">
-        <div class="included-item">
-          <div class="glyph">◆</div>
-          <p>SSL certificate (security)</p>
-        </div>
-        <div class="included-item">
-          <div class="glyph">☁</div>
-          <p>Web hosting assistance</p>
-        </div>
-        <div class="included-item">
-          <div class="glyph">▤</div>
-          <p>Basic training (how to use it)</p>
-        </div>
-        <div class="included-item">
-          <div class="glyph">◎</div>
-          <p>Ongoing support &amp; guidance</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY US -->
-  <section class="section-pad" id="why">
-    <div class="wrap why-grid">
-      <div>
-        <div class="eyebrow">WHY CHOOSE US</div>
-        <h2 style="font-family:var(--display);font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:18px;">A studio that ships and sticks around</h2>
-        <ul class="why-list">
-          <li>
-            <span class="num">01</span>
-            <div><h4>Modern &amp; unique designs</h4><p>No two client sites look the same — built around your business, not a theme store.</p></div>
-          </li>
-          <li>
-            <span class="num">02</span>
-            <div><h4>Fast, secure, and reliable</h4><p>Optimized loading speed on hosting we trust, with SSL on every plan.</p></div>
-          </li>
-          <li>
-            <span class="num">03</span>
-            <div><h4>100% responsive, SEO-friendly structure</h4><p>Built to work on any screen and to be found on Google from day one.</p></div>
-          </li>
-          <li>
-            <span class="num">04</span>
-            <div><h4>Dedicated support after launch</h4><p>We don't disappear after the invoice — ongoing guidance is part of the deal.</p></div>
-          </li>
-        </ul>
-      </div>
-      <div class="why-panel">
-        <div class="line"><span class="sym">$</span> whoami</div>
-        <div class="line out">tipsy_tech_solutions — Goa, India</div>
-        <div class="line"><span class="sym">$</span> cat mission.txt</div>
-        <div class="line out">"We build websites that build your business."</div>
-        <div class="line"><span class="sym">$</span> ls services/</div>
-        <div class="line out">starter/  business/  premium/  support/</div>
-        <div class="line"><span class="sym">$</span> ./deploy --client=you</div>
-        <div class="line out">→ site live in under 3 weeks</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section-pad">
-    <div class="wrap">
-      <div class="cta-band">
-        <h2>Your business deserves a website that works as hard as you do.</h2>
-        <p>Tell us about your business and we'll recommend the right package — no pressure, just a plan.</p>
-        <div class="hero-actions">
-          <a href="contact.html" class="btn-primary">Start your project →</a>
-          <a href="tel:+917030955722" class="btn-ghost">Call +91 70309 55722</a>
         </div>
       </div>
     </div>
@@ -784,7 +646,8 @@
       <div class="footer-col">
         <h5>Studio</h5>
         <p>Goa, India</p>
-        <a href="packages.html">Packages</a>
+        <a href="index.html">Home</a>
+        <a href="included.html">What's Included</a>
         <a href="whyus.html">Why Us</a>
       </div>
     </div>
