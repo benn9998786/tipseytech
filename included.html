@@ -434,6 +434,289 @@
     --text-muted:#9FB8A5;
   }
 </style>
+
+<style>
+/* ===== Tipsy Tech — Included Page Expansion ===== */
+:root{
+  --bg2:#070c09;
+  --surface-glass:rgba(15,25,18,.78);
+  --green-bright:#a6ff72;
+}
+body{
+  background:
+    radial-gradient(900px 520px at 10% 0%,rgba(140,255,78,.10),transparent 62%),
+    radial-gradient(750px 500px at 90% 45%,rgba(80,210,60,.06),transparent 68%),
+    linear-gradient(180deg,#070b09 0%,#09110c 55%,#070b09 100%);
+}
+body::after{
+  content:"";
+  position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.14;
+  background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
+  background-size:52px 52px;
+  mask-image:linear-gradient(to bottom,black,transparent 85%);
+}
+header{
+  background:rgba(7,11,9,.72);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+nav.wrap{height:82px;}
+.logo-mark{
+  width:38px;height:38px;border-radius:11px;
+  background:linear-gradient(145deg,#b9ff83,#5ed338);
+  box-shadow:0 0 30px rgba(140,255,78,.18);
+  transition:.25s ease;
+}
+.logo:hover .logo-mark{transform:rotate(-7deg) scale(1.06);}
+.nav-links{gap:30px;}
+.nav-links a{padding:8px 0;}
+.nav-cta{
+  background:rgba(140,255,78,.055);
+  border-color:rgba(140,255,78,.28);
+  padding:10px 16px;
+}
+
+/* Intro */
+.section-pad{
+  padding:105px 0 85px;
+}
+.section-head{
+  max-width:720px;
+  margin-bottom:58px;
+}
+.section-head h2{
+  font-size:clamp(2.35rem,4vw,3.55rem);
+  line-height:1.04;
+  letter-spacing:-.045em;
+  text-wrap:balance;
+  margin-bottom:18px;
+}
+.section-head p{
+  font-size:1.05rem;
+  line-height:1.8;
+}
+.section-head h2::after{
+  content:"";
+  display:block;
+  width:65px;height:3px;
+  margin-top:22px;
+  border-radius:99px;
+  background:linear-gradient(90deg,var(--green),transparent);
+  box-shadow:0 0 22px rgba(140,255,78,.25);
+}
+
+/* Included cards */
+.included-grid{
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+.included-item{
+  position:relative;
+  min-height:220px;
+  padding:30px 24px;
+  border-radius:18px;
+  border-color:rgba(255,255,255,.075);
+  background:
+    linear-gradient(180deg,rgba(18,30,21,.94),rgba(10,17,13,.96));
+  box-shadow:0 22px 55px rgba(0,0,0,.22);
+  overflow:hidden;
+  transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;
+}
+.included-item::before{
+  content:"";
+  position:absolute;
+  width:130px;height:130px;
+  top:-65px;right:-65px;
+  border-radius:50%;
+  background:rgba(140,255,78,.07);
+  filter:blur(2px);
+}
+.included-item::after{
+  content:"";
+  position:absolute;
+  left:24px;right:24px;bottom:0;
+  height:2px;
+  background:linear-gradient(90deg,transparent,var(--green),transparent);
+  opacity:.25;
+  transition:opacity .25s;
+}
+.included-item:hover{
+  transform:translateY(-9px);
+  border-color:rgba(140,255,78,.3);
+  box-shadow:0 34px 75px rgba(0,0,0,.34),0 0 45px rgba(140,255,78,.05);
+}
+.included-item:hover::after{opacity:.9;}
+.included-item .glyph{
+  width:62px;height:62px;
+  flex-shrink:0;
+  border:1px solid rgba(140,255,78,.22);
+  background:rgba(140,255,78,.07);
+  box-shadow:inset 0 0 25px rgba(140,255,78,.04),0 10px 25px rgba(0,0,0,.16);
+  font-size:1.45rem;
+}
+.included-item p{
+  font-family:var(--display);
+  color:var(--text);
+  font-weight:600;
+  font-size:1rem;
+  line-height:1.45;
+  max-width:190px;
+}
+
+/* Add-on feature strip */
+.included-extra{
+  margin-top:22px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.extra-card{
+  position:relative;
+  padding:24px 25px;
+  border:1px solid rgba(255,255,255,.075);
+  border-radius:16px;
+  background:rgba(255,255,255,.018);
+  transition:.25s ease;
+}
+.extra-card:hover{
+  background:rgba(140,255,78,.035);
+  border-color:rgba(140,255,78,.22);
+  transform:translateY(-5px);
+}
+.extra-number{
+  font-family:var(--mono);
+  color:var(--green);
+  font-size:.72rem;
+  letter-spacing:.1em;
+  margin-bottom:12px;
+}
+.extra-card h3{
+  font-family:var(--display);
+  font-size:1.05rem;
+  margin-bottom:7px;
+}
+.extra-card p{
+  color:var(--text-muted);
+  font-size:.85rem;
+  line-height:1.65;
+}
+
+/* Process section */
+.process-section{
+  position:relative;
+  z-index:1;
+  padding:80px 0 105px;
+}
+.process-head{
+  text-align:center;
+  max-width:620px;
+  margin:0 auto 45px;
+}
+.process-head h2{
+  font-family:var(--display);
+  font-size:clamp(1.9rem,3vw,2.6rem);
+  letter-spacing:-.035em;
+  margin-bottom:12px;
+}
+.process-head p{color:var(--text-muted);}
+.process-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  border:1px solid rgba(255,255,255,.075);
+  border-radius:18px;
+  overflow:hidden;
+  background:rgba(13,21,16,.72);
+}
+.process-step{
+  position:relative;
+  padding:28px 25px;
+  border-right:1px solid rgba(255,255,255,.07);
+}
+.process-step:last-child{border-right:none;}
+.process-step .num{
+  font-family:var(--mono);
+  color:var(--green);
+  font-size:.75rem;
+  margin-bottom:22px;
+}
+.process-step h3{
+  font-family:var(--display);
+  font-size:1rem;
+  margin-bottom:8px;
+}
+.process-step p{
+  color:var(--text-muted);
+  font-size:.83rem;
+  line-height:1.6;
+}
+.process-step .arrow{
+  position:absolute;
+  top:30px;right:18px;
+  color:rgba(140,255,78,.35);
+  font-family:var(--mono);
+}
+
+/* Trust / guarantee banner */
+.guarantee{
+  margin-top:22px;
+  padding:26px 30px;
+  border:1px solid rgba(140,255,78,.18);
+  border-radius:17px;
+  background:
+    radial-gradient(circle at 90% 50%,rgba(140,255,78,.08),transparent 35%),
+    rgba(140,255,78,.025);
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+.guarantee-icon{
+  width:46px;height:46px;
+  display:grid;place-items:center;
+  flex-shrink:0;
+  border-radius:12px;
+  background:rgba(140,255,78,.08);
+  border:1px solid rgba(140,255,78,.22);
+  color:var(--green);
+  font-family:var(--mono);
+}
+.guarantee h3{
+  font-family:var(--display);
+  font-size:1rem;
+  margin-bottom:4px;
+}
+.guarantee p{
+  color:var(--text-muted);
+  font-size:.84rem;
+}
+
+/* Footer polish */
+footer{
+  background:#070c09;
+  border-top-color:rgba(255,255,255,.065);
+}
+.footer-bottom{border-top-color:rgba(255,255,255,.065);}
+
+@media(max-width:960px){
+  .included-grid{grid-template-columns:repeat(2,1fr);}
+  .included-extra{grid-template-columns:1fr;}
+  .process-grid{grid-template-columns:repeat(2,1fr);}
+  .process-step:nth-child(2){border-right:none;}
+  .process-step:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.07);}
+}
+@media(max-width:600px){
+  .section-pad{padding:68px 0 65px;}
+  .section-head h2{font-size:2.3rem;}
+  .included-grid{grid-template-columns:1fr;}
+  .included-item{min-height:190px;}
+  .process-grid{grid-template-columns:1fr;}
+  .process-step{border-right:none!important;border-bottom:1px solid rgba(255,255,255,.07);}
+  .process-step:last-child{border-bottom:none;}
+  .guarantee{align-items:flex-start;padding:22px;}
+}
+</style>
+
 </head>
 <body>
 
@@ -462,7 +745,7 @@
       <a href="whyus.html">Why Us</a>
       <a href="contact.html">Contact</a>
     </div>
-    <a href="contact.html" class="nav-cta">$ get_quote</a>
+    <a href="contact.html" class="nav-cta">Get a quote ↗</a>
   </nav>
 </header>
 
@@ -492,8 +775,71 @@
           <p>Ongoing support & guidance</p>
         </div>
       </div>
+      <div class="included-extra">
+        <div class="extra-card">
+          <div class="extra-number">01 / SECURITY</div>
+          <h3>Built to be secure</h3>
+          <p>SSL and sensible security setup help keep your business website protected and trustworthy.</p>
+        </div>
+        <div class="extra-card">
+          <div class="extra-number">02 / PERFORMANCE</div>
+          <h3>Ready for real visitors</h3>
+          <p>Responsive layouts and performance-conscious implementation across desktop, tablet and mobile.</p>
+        </div>
+        <div class="extra-card">
+          <div class="extra-number">03 / SUPPORT</div>
+          <h3>You aren't left alone</h3>
+          <p>Get guidance when you need to update, understand or improve your website after launch.</p>
+        </div>
+      </div>
+
+      <div class="guarantee">
+        <div class="guarantee-icon">✓</div>
+        <div>
+          <h3>Everything needed to get started</h3>
+          <p>Your package includes the essentials first, with advanced functionality available when your business needs it.</p>
+        </div>
+      </div>
+
     </div>
   </section>
+
+<section class="process-section">
+  <div class="wrap">
+    <div class="process-head">
+      <div class="eyebrow">HOW IT WORKS</div>
+      <h2>From idea to live website</h2>
+      <p>A simple process designed to keep the project clear, fast and easy to follow.</p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="num">01 — DISCOVER</div>
+        <h3>Understand your business</h3>
+        <p>We learn what you do, who you serve and what the website needs to achieve.</p>
+        <span class="arrow">→</span>
+      </div>
+      <div class="process-step">
+        <div class="num">02 — DESIGN</div>
+        <h3>Build the visual direction</h3>
+        <p>We shape the layout, sections, content hierarchy and overall brand experience.</p>
+        <span class="arrow">→</span>
+      </div>
+      <div class="process-step">
+        <div class="num">03 — DEVELOP</div>
+        <h3>Turn it into a website</h3>
+        <p>The approved design becomes a responsive, functional website ready for visitors.</p>
+        <span class="arrow">→</span>
+      </div>
+      <div class="process-step">
+        <div class="num">04 — LAUNCH</div>
+        <h3>Go live with support</h3>
+        <p>We help with hosting, domain setup and the basics you need after launch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer id="contact">

@@ -496,6 +496,250 @@
     --text-muted:#9FB8A5;
   }
 </style>
+
+<style>
+/* ===== Premium Packages Page Refresh ===== */
+:root{
+  --bg:#070b09;
+  --surface:#0d1510;
+  --surface-2:#111c15;
+  --line:rgba(180,255,145,.11);
+  --line-bright:rgba(140,255,78,.32);
+  --green:#9dff63;
+  --text:#f4f8f2;
+  --text-muted:#a4b7a7;
+  --text-faint:#647467;
+}
+
+body{
+  background:
+    radial-gradient(850px 520px at 8% 0%,rgba(140,255,78,.10),transparent 62%),
+    radial-gradient(700px 520px at 94% 25%,rgba(90,220,55,.065),transparent 65%),
+    linear-gradient(180deg,#070b09,#09100c 55%,#070b09);
+}
+
+body::before{
+  content:"";
+  position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.18;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:52px 52px;
+  mask-image:linear-gradient(to bottom,black,transparent 85%);
+}
+
+header{
+  background:rgba(7,11,9,.74);
+  border-bottom:1px solid rgba(255,255,255,.065);
+  box-shadow:0 12px 40px rgba(0,0,0,.18);
+}
+nav.wrap{height:82px;}
+.logo-mark{
+  width:38px;height:38px;border-radius:11px;
+  background:linear-gradient(145deg,#b9ff83,#5fd536);
+  box-shadow:0 0 28px rgba(140,255,78,.17);
+  transition:.25s ease;
+}
+.logo:hover .logo-mark{transform:rotate(-7deg) scale(1.05);}
+.nav-links{gap:30px;}
+.nav-links a{padding:8px 0;}
+.nav-cta{
+  background:rgba(140,255,78,.055);
+  border-color:rgba(140,255,78,.27);
+  padding:10px 16px;
+}
+
+/* page intro */
+.section-pad{
+  padding:105px 0 110px;
+}
+.section-head{
+  max-width:720px;
+  margin:0 auto 62px;
+}
+.section-head .eyebrow{
+  box-shadow:0 10px 35px rgba(0,0,0,.14);
+  background:linear-gradient(180deg,rgba(140,255,78,.09),rgba(140,255,78,.025));
+}
+.section-head h2{
+  font-size:clamp(2.3rem,4vw,3.5rem);
+  letter-spacing:-.045em;
+  line-height:1.04;
+  margin-bottom:18px;
+  text-wrap:balance;
+}
+.section-head h2::after{
+  content:"";
+  display:block;
+  width:58px;height:3px;
+  margin:22px auto 0;
+  border-radius:99px;
+  background:linear-gradient(90deg,transparent,var(--green),transparent);
+  box-shadow:0 0 20px rgba(140,255,78,.25);
+}
+.section-head p{
+  font-size:1.05rem;
+  line-height:1.75;
+}
+
+/* pricing cards */
+.pricing-grid{
+  gap:20px;
+  align-items:stretch;
+}
+.price-card{
+  position:relative;
+  border-radius:20px;
+  border-color:rgba(255,255,255,.075);
+  background:
+    linear-gradient(180deg,rgba(17,28,20,.97),rgba(9,16,12,.98));
+  box-shadow:0 24px 65px rgba(0,0,0,.27);
+  transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;
+}
+.price-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  border-radius:20px;
+  background:linear-gradient(135deg,rgba(255,255,255,.035),transparent 35%);
+}
+.price-card:hover{
+  transform:translateY(-9px);
+  border-color:rgba(140,255,78,.28);
+  box-shadow:0 35px 80px rgba(0,0,0,.36);
+}
+.price-card.featured{
+  transform:none;
+  border:1px solid rgba(140,255,78,.68);
+  background:
+    radial-gradient(circle at 50% 0%,rgba(140,255,78,.13),transparent 38%),
+    linear-gradient(180deg,rgba(18,32,20,.99),rgba(9,16,12,.99));
+  box-shadow:0 30px 90px rgba(82,210,50,.12);
+}
+.price-card.featured:hover{transform:translateY(-9px);}
+
+.price-card .term-bar{
+  padding:13px 15px;
+  background:rgba(255,255,255,.025);
+  border-bottom-color:rgba(255,255,255,.065);
+}
+.term-file{color:#718275;}
+
+.price-card-inner{
+  padding:34px 29px 29px;
+}
+.price-card h3{
+  font-size:1.45rem;
+  letter-spacing:-.025em;
+}
+.price-card .tagline{
+  min-height:42px;
+  line-height:1.55;
+}
+.price-value{
+  font-size:2rem;
+  letter-spacing:-.035em;
+  margin-top:4px;
+}
+.price-value .from{font-size:.9rem;}
+.price-note{
+  margin-top:6px;
+  margin-bottom:24px;
+}
+
+.feature-list{
+  margin-bottom:30px;
+}
+.feature-list li{
+  padding:9px 0;
+  border-bottom-color:rgba(255,255,255,.055);
+  line-height:1.45;
+}
+.feature-list li .tick{
+  width:19px;height:19px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:rgba(140,255,78,.09);
+  font-size:.62rem;
+}
+
+.price-cta{
+  padding:14px;
+  border-radius:10px;
+  background:rgba(255,255,255,.025);
+}
+.price-card:not(.featured) .price-cta:hover{
+  background:rgba(140,255,78,.06);
+}
+.price-card.featured .price-cta{
+  background:linear-gradient(135deg,#b8ff82,#72e442);
+  box-shadow:0 12px 30px rgba(140,255,78,.16);
+}
+
+.price-card .badge{
+  z-index:2;
+  top:-12px;
+  padding:5px 11px;
+  border-radius:999px;
+  box-shadow:0 8px 22px rgba(140,255,78,.16);
+}
+
+/* bonus */
+.bonus-strip{
+  position:relative;
+  overflow:hidden;
+  margin-top:30px;
+  padding:24px 28px;
+  border-radius:17px;
+  background:linear-gradient(90deg,rgba(140,255,78,.065),rgba(140,255,78,.012));
+  border-color:rgba(140,255,78,.22);
+}
+.bonus-strip::after{
+  content:"";
+  position:absolute;
+  right:-100px;top:-100px;
+  width:230px;height:230px;
+  border-radius:50%;
+  background:rgba(140,255,78,.05);
+  filter:blur(20px);
+}
+.bonus-icon{
+  width:44px;height:44px;
+  display:grid;place-items:center;
+  border:1px solid rgba(140,255,78,.22);
+  border-radius:12px;
+  background:rgba(140,255,78,.06);
+}
+
+/* footer */
+footer{
+  background:#070c09;
+  border-top-color:rgba(255,255,255,.065);
+}
+.footer-grid{gap:70px;}
+.footer-bottom{border-top-color:rgba(255,255,255,.065);}
+
+/* responsive */
+@media(max-width:960px){
+  .section-pad{padding:80px 0 85px;}
+  .pricing-grid{grid-template-columns:1fr;}
+  .price-card,.price-card.featured{max-width:620px;width:100%;margin:auto;}
+  .price-card:hover,.price-card.featured:hover{transform:translateY(-6px);}
+}
+@media(max-width:600px){
+  .section-pad{padding:65px 0 70px;}
+  .section-head{margin-bottom:48px;}
+  .section-head h2{font-size:2.25rem;}
+  .section-head p{font-size:.95rem;}
+  .price-card-inner{padding:30px 23px 23px;}
+  .price-value{font-size:1.8rem;}
+  .bonus-strip{padding:20px;}
+  .bonus-icon{flex-shrink:0;}
+}
+</style>
+
 </head>
 <body>
 
@@ -524,7 +768,7 @@
       <a href="whyus.html">Why Us</a>
       <a href="contact.html">Contact</a>
     </div>
-    <a href="contact.html" class="nav-cta">$ get_quote</a>
+    <a href="contact.html" class="nav-cta">Get a quote ↗</a>
   </nav>
 </header>
 
