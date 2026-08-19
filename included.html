@@ -433,6 +433,65 @@
   :root{
     --text-muted:#9FB8A5;
   }
+
+  /* ---------- animated background layer ---------- */
+  .bg-orbs{
+    position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+  }
+  .bg-orb{
+    position:absolute;border-radius:50%;
+    filter:blur(70px);opacity:.32;
+    background:radial-gradient(circle, var(--green) 0%, rgba(140,255,78,0) 70%);
+    animation:orbFloat 22s ease-in-out infinite;
+    will-change:transform;
+  }
+  .bg-orb.o1{width:440px;height:440px;top:-140px;left:-120px;animation-duration:24s;}
+  .bg-orb.o2{width:360px;height:360px;top:38%;right:-160px;animation-duration:28s;animation-delay:-7s;opacity:.24;}
+  .bg-orb.o3{width:320px;height:320px;bottom:-160px;left:18%;animation-duration:20s;animation-delay:-4s;opacity:.26;}
+  .bg-orb.o4{width:260px;height:260px;top:8%;right:22%;animation-duration:26s;animation-delay:-12s;opacity:.18;}
+  @keyframes orbFloat{
+    0%,100%{transform:translate(0,0) scale(1);}
+    33%{transform:translate(50px,-36px) scale(1.1);}
+    66%{transform:translate(-38px,30px) scale(0.94);}
+  }
+
+  body::before{
+    content:"";
+    position:fixed;inset:-96px;
+    pointer-events:none;z-index:0;
+    opacity:.18;
+    background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+                     linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+    background-size:48px 48px;
+    mask-image:radial-gradient(circle at 50% 0%, black, transparent 75%);
+    animation:gridPan 44s linear infinite;
+  }
+  @keyframes gridPan{
+    from{background-position:0 0, 0 0;}
+    to{background-position:96px 96px, 96px 96px;}
+  }
+
+  /* ---------- circuit backdrop ---------- */
+  .circuit-bg{
+    position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.35;
+  }
+  .circuit-bg path{
+    stroke-dasharray:10 8;
+    animation:dashFlow 7s linear infinite;
+  }
+  .circuit-bg circle{
+    transform-box:fill-box;transform-origin:center;
+    animation:circuitPulse 3.2s ease-in-out infinite;
+  }
+  @keyframes dashFlow{ to{ stroke-dashoffset:-180; } }
+  @keyframes circuitPulse{
+    0%,100%{opacity:.45;transform:scale(1);}
+    50%{opacity:1;transform:scale(1.6);}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .bg-orb,body::before,.circuit-bg path,.circuit-bg circle{animation:none;}
+  }
 </style>
 
 <style>
@@ -719,7 +778,14 @@ footer{
 
 </head>
 <body>
+  <div class="bg-orbs" aria-hidden="true">
+    <span class="bg-orb o1"></span>
+    <span class="bg-orb o2"></span>
+    <span class="bg-orb o3"></span>
+    <span class="bg-orb o4"></span>
+  </div>
 
+  
 <svg class="circuit-bg" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <g stroke="#8CFF4E" stroke-width="1" fill="none" opacity="0.5">
     <path d="M0 120 H180 L210 150 V260 L250 300 H420"/>
