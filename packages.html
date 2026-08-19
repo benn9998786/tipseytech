@@ -554,7 +554,62 @@
   @media (prefers-reduced-motion: reduce){
     .bg-orb,body::before,.circuit-bg path,.circuit-bg circle{animation:none;}
   }
-</style>
+
+  /* ---------- preloader ---------- */
+  .preloader{
+    position:fixed;inset:0;z-index:9999;background:var(--bg);
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+  }
+  .preloader-inner{
+    width:320px;max-width:90vw;
+  }
+  .preloader-content{
+    text-align:center;
+  }
+  .preloader-text{
+    display:flex;flex-direction:column;gap:12px;
+    align-items:center;margin-bottom:24px;
+    font-family:var(--mono);font-size:1.1rem;
+    color:var(--green);
+  }
+  .preloader-line{
+    font-family:var(--mono);font-weight:600;
+    min-width:8ch;text-align:center;
+    position:relative;display:inline-block;
+  }
+  .preloader-line.active{
+    position:relative;
+  }
+  .preloader-line.active::after{
+    content:'';position:absolute;left:0;bottom:-4px;
+    width:100%;height:2px;background:var(--green);
+    transform:scaleX(0);transform-origin:left;
+    animation:typeCursor 1.2s infinite;
+  }
+  @keyframes typeCursor{
+    to{transform:scaleX(1);}
+  }
+  .preloader-line.done{
+    color:var(--text-muted);
+  }
+  .preloader-progress{
+    width:100%;height:8px;background:var(--surface-2);
+    border-radius:4px;overflow:hidden;
+    margin-top:8px;
+  }
+  .preloader-fill{
+    height:100%;background:var(--green);
+    width:0%;transition:width 0.3s ease;
+  }
+  .preloader-pct{
+    display:block;margin-top:8px;font-family:var(--mono);
+    font-size:0.9rem;color:var(--text-muted);
+  }
+  .preloader.done{
+    opacity:0;pointer-events:none;
+  }
+  body.is-loading{overflow:hidden;}
 
 <style>
 /* ===== Premium Packages Page Refresh ===== */
@@ -801,6 +856,22 @@ footer{
 
 </head>
 <body>
+  <div id="preloader" class="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-content">
+        <div class="preloader-text">
+          <div class="preloader-line" data-text="boot"></div>
+          <div class="preloader-line" data-text="init system"></div>
+          <div class="preloader-line" data-text="loading ui"></div>
+          <div class="preloader-line" data-text="ready"></div>
+        </div>
+        <div class="preloader-progress">
+          <div class="preloader-fill"></div>
+          <div class="preloader-pct">0%</div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="bg-orbs" aria-hidden="true">
     <span class="bg-orb o1"></span>
     <span class="bg-orb o2"></span>
@@ -965,5 +1036,91 @@ footer{
   </div>
 </footer>
 
+<script>
+    (function(){
+      var pre = document.getElementById('preloader');
+      if(!pre){ return; }
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var lines = Array.prototype.slice.call(pre.querySelectorAll('.preloader-line'));
+      var fill = pre.querySelector('.preloader-fill');
+      var pct = pre.querySelector('.preloader-pct');
+
+      function setProgress(v){
+        fill.style.width = v + '%';
+        pct.textContent = Math.round(v) + '%';
+      }
+
+      function tween(from, to, duration){
+        return new Promise(function(resolve){
+          var t0 = performance.now();
+          function frame(now){
+            var p = Math.min(1, (now - t0) / duration);
+            setProgress(from + (to - from) * p);
+            if(p < 1){ requestAnimationFrame(frame); } else { resolve(); }
+          }
+          requestAnimationFrame(frame);
+        });
+      }
+
+      function typeLine(el){
+        return new Promise(function(resolve){
+          var text = el.getAttribute('data-text') || '';
+          el.classList.add('active');
+          var i = 0;
+          (function step(){
+            el.textContent = text.slice(0, i);
+            if(i <= text.length){
+              i++;
+              setTimeout(step, 12 + Math.random() * 16);
+            } else {
+              el.classList.remove('active');
+              el.classList.add('done');
+              resolve();
+            }
+          })();
+        });
+      }
+
+      async function typeAll(){
+        for(var i = 0; i < lines.length; i++){
+          await typeLine(lines[i]);
+        }
+      }
+
+      var pageReady = new Promise(function(resolve){
+        if(document.readyState === 'complete'){ resolve(); }
+        else { window.addEventListener('load', resolve, { once:true }); }
+      });
+
+      function finish(){
+        pre.classList.add('done');
+        document.body.classList.remove('is-loading');
+        setTimeout(function(){
+          if(pre.parentNode){ pre.parentNode.removeChild(pre); }
+        }, 650);
+      }
+
+      if(reduceMotion){
+        lines.forEach(function(el){
+          el.textContent = el.getAttribute('data-text');
+          el.classList.add('done');
+        });
+        setProgress(100);
+        pageReady.then(finish);
+        return;
+      }
+
+      var animation = (async function(){
+        typeAll();
+        await tween(0, 42, 500);
+        await tween(42, 78, 650);
+        await tween(78, 100, 450);
+      })();
+
+      Promise.all([animation, pageReady]).then(function(){
+        setTimeout(finish, 200);
+      });
+    })();
+    </script>
 </body>
 </html>
